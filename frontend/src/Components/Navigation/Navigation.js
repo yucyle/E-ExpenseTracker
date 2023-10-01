@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components'
-import avatar from '../../img/avatar.png'
+import ava from '../../img/ava.png'
 import { signout } from '../../utils/icons'
 import { menuItems } from '../../utils/menuItems'
 import { NotifyError } from '../../Function/Notify';
@@ -40,7 +40,7 @@ function Navigation({active, setActive}) {
     return (
         <NavStyled>
             <div className="user-con">
-                <img src={avatar} alt="" />
+                <img src={ava} alt="" />
                 <div className="text">
                     <h2>{username}</h2>
                     <p>{totalBalance()} $</p>

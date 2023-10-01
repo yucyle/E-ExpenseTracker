@@ -20,7 +20,7 @@ const ButtonStyled = styled.button`
     border: none;
     font-family: inherit;
     font-size: inherit;
-    display: flex;
+    ${'' /* display: flex; */}
     align-items: center;
     gap: .5rem;
     cursor: pointer;

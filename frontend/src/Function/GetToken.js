@@ -7,7 +7,7 @@ import { NotifyError } from './Notify';
 
 import { login, setUsername, setUserId, setAccessToken } from '../Reducers/authSlice';
 
-const BASE_URL = "http://localhost:5000/";
+const BASE_URL = "https://expensetracker-backend-foth.onrender.com/";
 
 const GetToken = () => {
     const dispatch = useDispatch();

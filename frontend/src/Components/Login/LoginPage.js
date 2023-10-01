@@ -11,7 +11,7 @@ import Button from '../Button/Button';
 import { NotifyError } from '../../Function/Notify';
 // import { useHistory } from 'react-router-dom';
 
-const BASE_URL = "http://localhost:5000/";
+const BASE_URL = "https://expensetracker-backend-foth.onrender.com/";
 
 function LoginPage() {
 
@@ -58,73 +58,97 @@ function LoginPage() {
     }
   };
 
+  const register = async () => {
+    try {
+      navigate("/register");
+    } catch (error) {
+      NotifyError(error.response.data.message);
+    }
+  }
+
   return (
-      <LoginPageStyled>
-          <InnerLayout>
-              <form onSubmit={handleLogin}>
-                  <input
-                      type="email"
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <input
-                      type="password"
-                      placeholder="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                  />
-                  {/* <div className='loginBtn'>
-                    <Button 
-                      type="submit"
-                      name={'Login'}
-                      // icon={plus}
-                      bPad={'.8rem 1.6rem'}
-                      bRad={'30px'}
-                      bg={'var(--color-accent'}
-                      color={'#fff'}
-                    />
-                  </div> */}
-                  <Button 
-                      type="submit"
-                      name={'Login'}
-                      // icon={plus}
-                      bPad={'.8rem 1.6rem'}
-                      bRad={'30px'}
-                      bg={'var(--color-accent'}
-                      color={'#fff'}
-                    />
-              </form>
-          </InnerLayout>
-      </LoginPageStyled>
+    <LoginPageStyled>
+      <InnerLayout>
+        <div className='header'>
+          <h1> Expense Tracker Web App </h1>
+        </div>
+        <br></br>
+        <br></br>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          
+          <Button 
+            type="submit"
+            name={'Login'}
+            bPad={'.8rem 1.6rem'}
+            bRad={'30px'} 
+            bg={'var(--color-accent'}
+            color={'#fff'}
+          />
+          <p> Don't have an account? </p>
+          <Button 
+            name={'Register'}
+            onClick={() => {register()}}
+            bPad={'.8rem 1.6rem'}
+            bRad={'30px'}
+            bg={'var(--color-accent'}
+            color={'#fff'}
+          />
+          
+          
+          
+        </form>
+      </InnerLayout>
+    </LoginPageStyled>
   )
 }
 
 const LoginPageStyled = styled.div`
+  .middle {
+    ${'' /* display: block; */}
+    margin-top: 10px;
+  }
+  .header {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  input{
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background: transparent;
+    resize: none;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+    color: rgba(34, 34, 96, 0.9);
+    &::placeholder{
+        color: rgba(34, 34, 96, 0.4);
     }
-    input{
-        font-family: inherit;
-        font-size: inherit;
-        outline: none;
-        border: none;
-        padding: .5rem 1rem;
-        border-radius: 5px;
-        border: 2px solid #fff;
-        background: transparent;
-        resize: none;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(34, 34, 96, 0.9);
-        &::placeholder{
-            color: rgba(34, 34, 96, 0.4);
-        }
-    }
+  }
     ${'' /* .loginBtn{
         button{
             box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);

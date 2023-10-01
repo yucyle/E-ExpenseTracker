@@ -13,7 +13,6 @@ import Navigation from '../Navigation/Navigation';
 import Income from '../Income/Income'
 import Expense from '../Expenses/Expense';
 import { setHistory } from '../../Reducers/authSlice';
-const BASE_URL = "http://localhost:5000/";
 
 function Home() {
     const [active, setActive] = useState(1);

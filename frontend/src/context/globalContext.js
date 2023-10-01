@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import axios from 'axios';
 import { NotifySuccess, NotifyError } from "../Function/Notify";
 
-const BASE_URL = "http://localhost:5000/";
+const BASE_URL = "https://expensetracker-backend-foth.onrender.com/";
 
 export const GlobalContext = createContext();
 

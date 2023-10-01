@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     '/auth',
     createProxyMiddleware({
-      target: 'http://localhost:5000', // Replace with your backend URL
+      target: 'https://expensetracker-backend-foth.onrender.com', // Replace with your backend URL
       changeOrigin: true,
     })
   );

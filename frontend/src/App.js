@@ -7,6 +7,7 @@ import Orb from './Components/Orb/Orb';
 import { ToastContainer } from 'react-toastify';
 import Home from './Components/Home/Home';
 import LoginPage from './Components/Login/LoginPage';
+import RegisterPage from './Components/Register/RegisterPage';
 import { GlobalProvider } from './context/globalContext';
 import GetToken  from './Function/GetToken';
 // import { GetToken } from './Function/GetToken';
@@ -30,6 +31,7 @@ function App() {
                     <Routes>
                         
                         <Route path="/" element={<LoginPage />} />
+                        <Route path="/register" element={<RegisterPage/>}/>
                         <Route element={<GetToken/>}>
                             <Route
                                 path="/home"
